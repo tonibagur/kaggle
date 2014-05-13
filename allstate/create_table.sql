@@ -1,5 +1,5 @@
 ﻿drop table train;
-create table train (
+create table test (
 customer_ID varchar(50) ,
 shopping_pt float,
 record_type float,
@@ -52,9 +52,9 @@ example:
 10000000,1,0,0,08:35,IN,10001,2,0,2,g,3,46,42,1,1,2,1,0,2,2,1,2,2,633*/
 
 
-COPY train FROM '/home/coneptum/kaggle_seguros/train.csv' DELIMITER ',' CSV;
+COPY train FROM '/home/coneptum/kaggle/allstate/train.csv' DELIMITER ',' CSV;
 
-COPY test FROM '/home/coneptum/kaggle_seguros/test_v2.csv' DELIMITER ',' CSV;
+COPY test FROM '/home/coneptum/kaggle/allstate/test_v2.csv' DELIMITER ',' CSV;
 
 select * from train limit 1000
 
@@ -74,7 +74,43 @@ select max(shopping_pt) from train where record_type=0
 select column_name from information_schema.columns where table_name='train'
 order by ordinal_position
 
-select count(*) from information_schema.columns where table_name='train_join'
+select count(*) from information_schema.columns where table_name='train_bin'
+and column_name ilike '%_y%'
+
+
+
+duration_previous varchar(10),
+
+
+select duration_previous,count(*)
+from train
+group by duration_previous
+order by duration_previous nulls first
+
+select * from train_bin limit 50 
+
+select count(*) from train_bin_y
+
+select * from train_bin_y_g limit 10
+
+
+select * from train_bin limit 10 
+
+select * from train_bin_y_a limit 10 
+
+select * from train_bin_y_b limit 10 
+
+select count(*) from test_bin limit 10
+
+
+select a_y+1 from train_join order by customer_id_1 asc limit 10
+
+
+select * from train_bin_y
+
+
+
+
 
 
 

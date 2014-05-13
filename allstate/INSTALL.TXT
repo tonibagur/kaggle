@@ -1,4 +1,17 @@
-INSTALL OCTAVE
-INSTALL POSTGRESQL
-INSTALL PSYCOPG2
-INSTALL OCT2PY?
+#INSTALL OCTAVE
+    sudo apt-get install octave
+#INSTALL POSTGRESQL
+    sudo apt-get install postgresql
+    sudo apt-get install pgadmin3
+    #sudo su -l postgres
+       createuser coneptum -P -s
+#INSTALL PSYCOPG2
+    sudo apt-get install python-psycopg2
+#INSTALL OCT2PY?
+    sudo pip install setuptools --no-use-wheel --upgrade (ubuntu)
+    sudo pip install oct2py
+#install numpy/scipy
+    sudo apt-get install python-scipy
+
+
+# si s'ha de fer un entregable, tenir especial cura amb la aleatorietat dels algorismes
