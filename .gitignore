@@ -4,6 +4,9 @@ __pycache__/
 
 *~
 *.mat
+diary
+octave-core
+submit.csv
 
 # C extensions
 *.so
